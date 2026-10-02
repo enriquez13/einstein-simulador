@@ -595,7 +595,7 @@ footer::after {
   position: absolute;
   z-index: 1;
 
-  width: 570px;
+  width: 1000px;
   height: auto;
 
   top: -45px;
