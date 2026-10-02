@@ -103,10 +103,12 @@ output {
   margin-bottom: 13px;
 }
 
-.brand svg {
+.logo-img {
   width: 58px;
   height: 58px;
   flex: 0 0 58px;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-name {
@@ -230,7 +232,7 @@ h1 span {
   align-items: flex-start;
   gap: 9px;
 
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.18;
   margin-bottom: 16px;
@@ -382,7 +384,7 @@ h1 span {
 
   border-bottom: 1px solid rgba(88, 177, 226, 0.35);
 
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.2;
 }
 
@@ -533,11 +535,11 @@ footer::after {
     margin-bottom: 16px;
   }
 
-  .brand svg {
-    width: 48px;
-    height: 48px;
-    flex-basis: 48px;
-  }
+  .logo-img {
+  width: 48px;
+  height: 48px;
+  flex-basis: 48px;
+}
 
   .brand-name {
     font-size: 27px;

@@ -45,43 +45,11 @@ function Option({ active, onClick, children }) {
 
 function Logo() {
   return (
-    <svg viewBox="0 0 64 64" width="58" height="58" aria-hidden="true">
-      <defs>
-        <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#5fd0ff" />
-          <stop offset="1" stopColor="#1f5fff" />
-        </linearGradient>
-      </defs>
-
-      <g
-        fill="none"
-        stroke="url(#lg)"
-        strokeWidth="4.5"
-        strokeLinecap="round"
-      >
-        <ellipse
-          cx="32"
-          cy="32"
-          rx="26"
-          ry="10"
-          transform="rotate(30 32 32)"
-        />
-        <ellipse
-          cx="32"
-          cy="32"
-          rx="26"
-          ry="10"
-          transform="rotate(-30 32 32)"
-        />
-        <ellipse
-          cx="32"
-          cy="32"
-          rx="26"
-          ry="10"
-          transform="rotate(90 32 32)"
-        />
-      </g>
-    </svg>
+    <img
+      src="/logo.png"
+      alt="Einstein"
+      className="logo-img"
+    />
   );
 }
 
