@@ -539,10 +539,14 @@ footer::after {
   }
 
   .logo-img {
-  width: 48px;
-  height: 48px;
-  flex-basis: 48px;
-}
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  object-fit: contain;
+  display: block;
+  background: white;
+  border-radius: 50%;
+  }
 
   .brand-name {
     font-size: 27px;
