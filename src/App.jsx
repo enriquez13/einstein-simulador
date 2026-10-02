@@ -103,6 +103,13 @@ export default function App() {
   return (
     <main className="page">
       <section className="slide">
+
+        <img
+          src="/mapa-mundo.png"
+          alt=""
+          className="world-map"
+        />
+
         <header className="brand">
           <Logo />
 
