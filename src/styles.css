@@ -570,6 +570,8 @@ footer::after {
 
   .card {
     min-height: auto;
+    width: 92%;
+    margin: 0 auto;
   }
 
   .result {
