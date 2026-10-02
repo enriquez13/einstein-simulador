@@ -249,6 +249,16 @@ h1 span {
   gap: 8px;
 }
 
+.card:nth-child(1) .opt,
+.card:nth-child(2) .opt {
+  width: 88%;
+  min-height: 40px;
+  margin: 0 auto;
+}
+
+.card:nth-child(3) .opt {
+  min-height: 48px;
+}
 .opts.row {
   grid-template-columns: 1fr 1fr;
   gap: 9px;
