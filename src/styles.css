@@ -109,6 +109,9 @@ output {
   flex: 0 0 58px;
   object-fit: contain;
   display: block;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .brand-name {
@@ -594,6 +597,13 @@ footer::after {
   footer::after {
     left: 18px;
     right: 18px;
+  }
+
+  .opt {
+    width: 85%;
+    min-height: 48px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }
