@@ -230,7 +230,7 @@ h1 span {
   align-items: flex-start;
   gap: 9px;
 
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.18;
   margin-bottom: 16px;
@@ -246,7 +246,7 @@ h1 span {
 
 .opts {
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .card:nth-child(1) .opt,
