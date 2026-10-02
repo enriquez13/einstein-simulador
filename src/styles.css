@@ -582,8 +582,10 @@ footer::after {
   }
 
   .result {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
+  
 
   .box output {
     font-size: 22px;
@@ -606,14 +608,16 @@ footer::after {
 .card:nth-child(1) .opt,
 .card:nth-child(2) .opt {
   width: 70%;
-  min-height: 40px;
+  min-height: 45px;
   margin: 0 auto;
+  font-size:16px;
 }
 
 .card:nth-child(3) .opt {
-  width: 70%;
-  min-height: 40px;
+  width: 80%;
+  min-height: 45px;
   margin: 0 auto;
+  font-size:16px;
 }
 
 }
