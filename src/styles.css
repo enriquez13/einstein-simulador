@@ -363,6 +363,7 @@ h1 span {
    PAINEL DE RESULTADO
    ========================================================= */
 
+
 .result {
   position: relative;
   padding: 17px 15px 14px;
@@ -439,6 +440,25 @@ h1 span {
   color: #b7cee2;
 }
 
+/* 1. CUOTA MENSUAL (Primer box) - Letra y número más grandes */
+.result .box:nth-of-type(1) label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.result .box:nth-of-type(1) output {
+  font-size: 32px;
+}
+
+/* 2. INVERSIÓN TOTAL (Segundo box) - Letra y número más pequeños */
+.result .box:nth-of-type(2) label {
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.result .box:nth-of-type(2) output {
+  font-size: 20px;
+}
 /* =========================================================
    RODAPÉ
    ========================================================= */
@@ -619,6 +639,14 @@ footer::after {
   margin: 0 auto;
   font-size:16px;
 }
+
+.result .box:nth-of-type(1) output {
+    font-size: 28px; /* Tamaño adaptado para móvil en Cuota Mensual */
+  }
+
+  .result .box:nth-of-type(2) output {
+    font-size: 18px; /* Tamaño adaptado para móvil en Inversión Total */
+  }
 
 }
 

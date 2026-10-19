@@ -197,11 +197,6 @@ export default function App() {
             </h3>
 
             <div className="box">
-              <label>Inversión total</label>
-              <output>{usd(totalAnim)}</output>
-            </div>
-
-            <div className="box">
               <label>Cuota mensual</label>
               <output>{usd(cuotaAnim)}</output>
 
@@ -210,6 +205,12 @@ export default function App() {
                 {hayAjuste && <> · la última es de {usd(ultima)}</>}
               </small>
             </div>
+            
+            <div className="box">
+              <label>Inversión total</label>
+              <output>{usd(totalAnim)}</output>
+            </div>
+            
           </aside>
         </div>
 
