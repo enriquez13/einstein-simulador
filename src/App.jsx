@@ -28,14 +28,22 @@ function useAnimatedNumber(target, duration = 600) {
   }, [target, duration]);
 
   return value;
+
+  // Si se elige 1 tema, forzamos que el plazo sea 18 meses
+  useEffect(() => {
+    if (temas === 1 && meses !== 18) {
+      setMeses(18);
+    }
+  }, [temas, meses]);
 }
 
-function Option({ active, onClick, children }) {
+function Option({ active, disabled, onClick, children }) {
   return (
     <button
       type="button"
       className={`opt ${active ? "on" : ""}`}
       aria-pressed={active}
+      disabled={disabled}
       onClick={onClick}
     >
       {children}
@@ -139,16 +147,22 @@ export default function App() {
               </h2>
 
               <div className="opts">
-                {PLAZOS.map((m) => (
-                  <Option
-                    key={m}
-                    active={meses === m}
-                    onClick={() => setMeses(m)}
-                  >
-                    {m} meses
-                  </Option>
-                ))}
-              </div>
+    {PLAZOS.map((m) => {
+      // Si hay 1 tema, solo 18 meses está habilitado
+      const isDisabled = temas === 1 && m !== 18;
+
+      return (
+        <Option
+          key={m}
+          active={meses === m}
+          disabled={isDisabled}
+          onClick={() => setMeses(m)}
+        >
+          {m} meses
+        </Option>
+      );
+    })}
+  </div>
             </article>
 
             <article className="card">
@@ -205,7 +219,7 @@ export default function App() {
                 {hayAjuste && <> · la última es de {usd(ultima)}</>}
               </small>
             </div>
-            
+
             <div className="box">
               <label>Inversión total</label>
               <output>{usd(totalAnim)}</output>
