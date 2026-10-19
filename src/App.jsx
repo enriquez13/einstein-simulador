@@ -116,7 +116,7 @@ export default function App() {
               </h2>
 
               <div className="opts">
-                {[1, 2, 3].map((n) => (
+                {[1, 2].map((n) => (
                   <Option
                     key={n}
                     active={temas === n}
