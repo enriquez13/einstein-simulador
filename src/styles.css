@@ -519,6 +519,25 @@ footer::after {
   background: rgba(67, 147, 201, 0.25);
   pointer-events: none;
 }
+/* =========================================================
+   ESTILO PARA BOTONES DESHABILITADOS (BLOQUEADOS EN GRIS)
+   ========================================================= */
+
+.opt:disabled {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #60758a;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none !important;
+}
+
+.opt:disabled:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #60758a;
+}
 
 /* =========================================================
    RESPONSIVE

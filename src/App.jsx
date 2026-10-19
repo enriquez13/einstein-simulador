@@ -28,13 +28,6 @@ function useAnimatedNumber(target, duration = 600) {
   }, [target, duration]);
 
   return value;
-
-  // Si se elige 1 tema, forzamos que el plazo sea 18 meses
-  useEffect(() => {
-    if (temas === 1 && meses !== 18) {
-      setMeses(18);
-    }
-  }, [temas, meses]);
 }
 
 function Option({ active, disabled, onClick, children }) {
@@ -65,6 +58,13 @@ export default function App() {
   const [temas, setTemas] = useState(2);
   const [meses, setMeses] = useState(24);
   const [intercambio, setIntercambio] = useState(true);
+
+  // EFECTO CORREGIDO: Debe ir dentro de App(), antes de calcular los valores
+  useEffect(() => {
+    if (temas === 1 && meses !== 18) {
+      setMeses(18);
+    }
+  }, [temas, meses]);
 
   const { total, cuota, ultima } = calcular({
     temas,
@@ -128,7 +128,12 @@ export default function App() {
                   <Option
                     key={n}
                     active={temas === n}
-                    onClick={() => setTemas(n)}
+                    onClick={() => {
+                      setTemas(n);
+                      if (n === 1) {
+                        setMeses(18); // Se fuerza a 18 al instante al hacer clic
+                      }
+                    }}
                   >
                     {n} {n === 1 ? "tema" : "temas"}
                   </Option>
@@ -147,22 +152,21 @@ export default function App() {
               </h2>
 
               <div className="opts">
-    {PLAZOS.map((m) => {
-      // Si hay 1 tema, solo 18 meses está habilitado
-      const isDisabled = temas === 1 && m !== 18;
+                {PLAZOS.map((m) => {
+                  const isDisabled = temas === 1 && m !== 18;
 
-      return (
-        <Option
-          key={m}
-          active={meses === m}
-          disabled={isDisabled}
-          onClick={() => setMeses(m)}
-        >
-          {m} meses
-        </Option>
-      );
-    })}
-  </div>
+                  return (
+                    <Option
+                      key={m}
+                      active={meses === m}
+                      disabled={isDisabled}
+                      onClick={() => setMeses(m)}
+                    >
+                      {m} meses
+                    </Option>
+                  );
+                })}
+              </div>
             </article>
 
             <article className="card">
@@ -224,7 +228,7 @@ export default function App() {
               <label>Inversión total</label>
               <output>{usd(totalAnim)}</output>
             </div>
-            
+
           </aside>
         </div>
 
